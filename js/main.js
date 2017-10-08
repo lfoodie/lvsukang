@@ -149,4 +149,119 @@ $("a.decrease").click(function(){
     smallPrice=formatMoney(smallPrice);
     $("span.calPrice[oid="+oid+"]").html("￥"+smallPrice);
 });
+
+
+/*==========================================显示和隐藏效果=========================*/
+function showProduct(cid){
+    $("div.enum-content[cid="+cid+"]").css("background-color","white");
+    $("div.enum-content a[cid="+cid+"]").css("color","lightskyblue");
+    $("div.product[cid="+cid+"]").show();
+}
+function hideProduct(cid){
+    $("div.enum-content[cid="+cid+"]").css("background-color","#e2e2e3");
+    $("div.enum-content a[cid="+cid+"]").css("color","black");
+    $("div.product[cid="+cid+"]").hide();
+}
+$("div.enum-content").mouseenter(function(){
+    var cid=$(this).attr("cid");
+    showProduct(cid);
+})
+$("div.product").mouseenter(function(){
+    var cid=$(this).attr("cid");
+    showProduct(cid);
+})
+$("div.product").mouseleave(function(){
+    var cid=$(this).attr("cid");
+    hideProduct(cid);
+})
+$("div.enum-content").mouseleave(function(){
+    var cid=$(this).attr("cid");
+    hideProduct(cid);
+})
+function addBorder(vid){
+    $("div.product-item[vid="+vid+"]").addClass("borderRed");
+}
+function removeBorder(vid){
+    $("div.product-item[vid="+vid+"]").removeClass("borderRed");
+}
+$("div.product-item").mouseenter(function(){
+   var vid=$(this).attr("vid");
+   addBorder(vid);
+})
+$("div.product-item").mouseleave(function(){
+    var vid=$(this).attr("vid");
+    removeBorder(vid);
+})
+/*===================================浮动导航栏=================================*/
+    $("div.floatled").hide();
+    $("button.publish").hide();
+    var isclick=false;
+    $(window).scroll(function(){
+        if(!isclick){
+        var _top=$(window).scrollTop();
+        if(_top>800&&_top<3700){
+            $("div.floatled").show();
+            $("button.publish").show();
+            if(_top>800&&_top<1400){
+                $("#1").addClass("active-red");
+                $("#2").removeClass("active-blue");
+                $("#3").removeClass("active-green");
+                $("#4").css("background-color","#626262");
+                $("#5").css("background-color","#626262");
+            }
+            if(_top>=1400&&_top<2100){
+                $("#1").removeClass("active-red");
+                $("#2").addClass("active-blue");
+                $("#3").removeClass("active-green");
+                $("#4").css("background-color","#626262");
+                $("#5").css("background-color","#626262");
+            }
+            if(_top>=2100&&_top<2700){
+                $("#2").removeClass("active-blue");
+                $("#3").addClass("active-green");
+                $("#4").css("background-color","#626262");
+                $("#5").css("background-color","#626262");
+            }
+            if(_top>=2700&&_top<3400){
+                $("#1").removeClass("active-red");
+                $("#2").removeClass("active-blue");
+                $("#3").removeClass("active-green");
+                $("#4").css("background-color","#18C9A9");
+                $("#5").css("background-color","#626262");
+            }
+            if(_top>=3400){
+                $("#1").removeClass("active-red");
+                $("#2").removeClass("active-blue");
+                $("#3").removeClass("active-green");
+                $("#4").css("background-color","#626262");
+                $("#5").css("background-color","#EA5FBD");
+            }
+        }
+        else{
+            $("div.floatled").hide();
+        }
+    }
+    });
+    $("#1").click(function(){
+        $("html,body").animate({scrollTop: "810px"}, 500);
+    });
+    $("#2").click(function(){
+        $('html,body').animate({scrollTop: "1410px"}, 500);
+    });    
+    $("#3").click(function(){
+        $("html,body").animate({scrollTop:"2110px"},500);
+    });
+    $("#4").click(function(){
+        $("html,body").animate({scrollTop:"2710px"},500);
+    });
+    $("#5").click(function(){
+        $("html,body").animate({scrollTop:"3410px"},500);
+    });
+    $("#6").click(function(){
+        $("html,body").animate({scrollTop:"0px"},500);
+    });
+
+
+
+
 });

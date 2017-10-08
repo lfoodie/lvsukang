@@ -1,6 +1,6 @@
 @charset "utf-8";
 .market-main{
-    width: 75%;
+    max-width: 1070px;
     margin: 20px auto;
     padding: 20px;
 }
@@ -8,6 +8,19 @@
     border: 1px solid rgb(255, 153, 0);
     border-top: 3px solid rgb(255, 153, 0);
     padding: 15px;
+}
+.market-first{
+    padding: 10px;
+    height: 553px;
+    width: 263px;
+    cursor: pointer;
+    text-align: center;
+}
+.market-first img{
+    opacity: 1;
+}
+.market-first img:hover{
+    opacity: 0.8;
 }
 .market-each{
     padding: 10px;
@@ -27,7 +40,7 @@
 .market-cart{
     width: 25px;
     height: 25px;
-    background-color: rgb(241, 35, 98);
+    background-color: rgb(255, 153, 0);
     text-align: center;
     padding: 4.5px;
     float: right;
@@ -52,4 +65,165 @@
     width: 300px;
     background-color: black;
     height: 30px;
+}
+
+
+/*======================导航和轮播=========================*/
+.carsousel_nav{
+    width: 100%;
+    position: relative;
+    /* height: 550px; */
+    border: 3px solid green;
+}
+.headBar{
+    background-color: rgb(255, 153, 0);
+    margin: auto;
+    padding-left: 440px; 
+}
+.dropmenu{
+    color: white;
+    height: 36px;
+    width: 200px;
+    line-height: 36px;
+    background-color: rgb(255, 153, 0);
+    font-size: 16px;
+    margin-left: 20px;
+    display: inline-block;
+}
+.rightmenu{
+    display: inline-block;
+}
+.headBar span{
+    margin: 0 20px 0 20px;
+}
+.headBar a{
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+}
+.headBar a:hover{
+    text-decoration: none;
+}
+.rightmenu img{
+    height: 30px;
+}
+.carousel-main{
+    width: 1024px;
+    height: 400px;
+    margin: 0 auto;
+}
+.carousel-main img{
+    height: 400px;
+}
+.carousel-background{
+    background-color: #E8E8E8;
+    width: 100%;
+    text-align: center;
+    z-index: -1;
+}
+.carousel-inner{
+    margin-left: 220px;
+}
+.carousel-indicators{
+    margin-left: 220px;
+}
+
+/*=====================下拉菜单和内容==========================*/
+.content-menu{
+    width: 200px;
+    background-color: #E2E2E3;
+    position: absolute;
+    left: 456px;
+    top: 0;
+    z-index: 1;
+}
+.enum-content{
+    line-height: 40px;
+    padding-left: 10px;
+    font-size: 15px;
+}
+.enum-content:hover{
+    background-color: white;
+}
+.enum-content span{
+    margin-right: 10px;
+}
+.enum-content a{
+    color: black;
+}
+.enum-content a:hover{
+    color: lightskyblue;
+    text-decoration: none;
+}
+.dropmenu:hover .content-menu{
+    display: block;
+}
+.product{
+    display: none;
+    width: 800px;
+    height: 400px;
+    background-color: white;
+    margin-left: 220px;
+    position: absolute;
+    left: 436px;
+    top:0px;
+    z-index: 1;
+    padding-left: 10px;
+    padding-top:10px;
+}
+.product a{
+    color: #999;
+    font-size: 14px;
+    margin: 8px;
+    /* margin: 0 8px 0 8px; */
+}
+.product a:hover{
+    color: rgb(255, 153, 0);
+    text-decoration: none;
+}
+.separtor{
+    margin-top:20px;
+    border-bottom: 1px dashed #e7e7e7;
+}
+.row{
+    margin: 10px 80px 0 80px;
+}
+/* .row-special{
+    margin: 0px 80px 0 80px;
+} */
+/*================================浮动导航栏===============================*/
+.floatled{
+    position: fixed;
+    top:490px;
+    left:15%;
+    font-size: 12px;
+    font-family: Arial;
+    padding: 3px;
+}
+.floatled li{
+    list-style-type: none;
+    display: block;
+    width: 36px;
+    height: 33px;
+    margin-bottom: 6px;
+}
+.floatled-part{
+    height: 37px;
+    width: 37px;
+    background-color: rgb(98, 98, 98);
+    color: white;
+    border-width: 0;
+}
+.floatled-part img{
+    width: 100%;
+    height: 100%;
+}
+.active-red{
+    background-color: red;
+}
+.active-blue{
+    background-color: rgb(10, 166, 232);
+}
+.active-green{
+    background-color:rgb(100, 195, 51);
 }
